@@ -2,27 +2,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const products = [
     {
       id: 1,
-      name: "Rugby Jersey",
-      price: "RWF 79,000",
-      image: "https://placehold.co/500x500",
+      name: "Sport Jacket",
+      price: "RWF 30,000",
+      image: "./img/jacket.jpeg",
     },
     {
       id: 2,
-      name: "Rugby Shorts",
+      name: "Shorts",
       price: "RWF 45,000",
-      image: "https://placehold.co/500x500",
+      image: "./img/pent.jpeg",
     },
     {
       id: 3,
-      name: "Rugby Boots",
-      price: "RWF 120,000",
-      image: "https://placehold.co/500x500",
+      name: "T-Shirt",
+      price: "RWF 5,000",
+      image: "./img/tshet.jpeg",
     },
     {
       id: 4,
-      name: "Rugby Cap",
+      name: "Bottle",
       price: "RWF 30,000",
-      image: "https://placehold.co/500x500",
+      image: "./img/bottle.jpg",
     },
   ];
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <img
                     src="${product.image}"
                     alt="${product.name}"
-                    class="w-full h-48 object-cover rounded mb-4"
+                    class="w-full h-48 object-cover mb-4"
                   />
                   <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
                   <p class="text-gray-600 mb-4">Price: ${product.price}</p>

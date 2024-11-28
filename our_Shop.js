@@ -1,38 +1,38 @@
 const products = [
   {
     id: 1,
-    name: "1HR Jersey",
+    name: "Sport Jacket",
     category: "Clothing",
-    price: 79000,
-    image: "https://placehold.co/500x500",
+    price: 30000,
+    image: "./img/jacket.jpeg",
   },
   {
     id: 2,
-    name: "Cap",
-    category: "Accessories",
-    price: 29000,
-    image: "https://placehold.co/500x500",
+    name: "Shorts",
+    category: "Clothing",
+    price: 45000,
+    image: "./img/pent.jpeg",
   },
   {
     id: 3,
-    name: "1HR T-Shirt",
+    name: "T-Shirt",
     category: "Clothing",
-    price: 49000,
-    image: "https://placehold.co/500x500",
+    price: 5000,
+    image: "./img/tshet.jpeg",
   },
   {
     id: 4,
-    name: "1HR Hoodie",
-    category: "Clothing",
+    name: "Bottle",
+    category: "Equipment",
     price: 69000,
-    image: "https://placehold.co/500x500",
+    image: "./img/bottle.jpg",
   },
   {
     id: 5,
-    name: "Mug",
-    category: "Merchandise",
-    price: 19999,
-    image: "https://placehold.co/500x500",
+    name: "1HR Mask",
+    category: "Clothing",
+    price: 2000,
+    image: "./img/mask.jpeg",
   },
 ];
 
@@ -46,7 +46,7 @@ function renderProducts(filteredProducts) {
             <a href="product-details.html?id=${product.id}">
               <img src="${product.image}" alt="${
       product.name
-    }" class="w-full h-48 object-cover rounded">
+    }" class="w-full h-[270px] object-cover rounded">
               <h3 class="mt-4 text-xl font-bold">${product.name}</h3>
               <p class="mt-2 text-gray-600">RWF ${product.price.toLocaleString()}</p>
             </a>
