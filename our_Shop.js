@@ -29,10 +29,31 @@ const products = [
   },
   {
     id: 5,
+    name: "1HR Hats",
+    category: "Clothing",
+    price: 2000,
+    image: "./img/hat.jpeg",
+  },
+  {
+    id: 6,
     name: "1HR Mask",
     category: "Clothing",
     price: 2000,
     image: "./img/mask.jpeg",
+  },
+  {
+    id: 7,
+    name: "Cup 1HR",
+    category: "Clothing",
+    price: 2000,
+    image: "./img/cup.jpeg",
+  },
+  {
+    id: 8,
+    name: "Cups 1HR",
+    category: "Equepiment",
+    price: 2000,
+    image: "./img/cups.jpeg",
   },
 ];
 
@@ -42,11 +63,11 @@ function renderProducts(filteredProducts) {
   productsContainer.innerHTML = ""; // Clear the container
   filteredProducts.forEach((product) => {
     const productHTML = `
-          <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+          <div class="bg-white p-1 rounded shadow hover:shadow-lg transition">
             <a href="product-details.html?id=${product.id}">
               <img src="${product.image}" alt="${
       product.name
-    }" class="w-full h-[270px] object-cover rounded">
+    }" class="w-full h-60 object-cover rounded">
               <h3 class="mt-4 text-xl font-bold">${product.name}</h3>
               <p class="mt-2 text-gray-600">RWF ${product.price.toLocaleString()}</p>
             </a>
