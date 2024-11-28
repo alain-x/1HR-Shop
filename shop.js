@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const productContainer = document.getElementById("products-container");
-
-  // Generate product cards
+ 
   productContainer.innerHTML = products
     .map(
       (product) => `
@@ -46,16 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
             `
     )
     .join("");
-
-  // Update cart count on page load
+ 
   updateCartCount();
 });
 
-function updateCartCount() {
-  // Retrieve cart data from localStorage
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // Update the cart count display
+function updateCartCount() { 
+  const cart = JSON.parse(localStorage.getItem("cart")) || []; 
   const cartCount = document.getElementById("cart-count");
   cartCount.textContent = cart.length > 0 ? cart.length : "0";
 }

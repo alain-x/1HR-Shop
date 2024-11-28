@@ -51,7 +51,7 @@ const products = [
   {
     id: 8,
     name: "Cups 1HR",
-    category: "Equepiment",
+    category: "Equipment",
     price: 2000,
     image: "./img/cups.jpeg",
   },
@@ -63,7 +63,7 @@ function renderProducts(filteredProducts) {
   productsContainer.innerHTML = ""; // Clear the container
   filteredProducts.forEach((product) => {
     const productHTML = `
-          <div class="bg-white p-1 rounded shadow hover:shadow-lg transition">
+          <div class="bg-white  rounded shadow hover:shadow-lg transition">
             <a href="product-details.html?id=${product.id}">
               <img src="${product.image}" alt="${
       product.name
