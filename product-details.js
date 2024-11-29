@@ -61,7 +61,11 @@ const productDetails = {
       "Available in multiple colors",
     ],
     sizeOptions: ["One size fits all"],
-    images: ["./img/zphats.jpg"],
+    images: [
+      "./img/zphats.jpg",
+      "https://placehold.co/501x501",
+      "https://placehold.co/501x501",
+    ],
   },
   6: {
     name: "1HR Mask",
@@ -74,7 +78,11 @@ const productDetails = {
       "Stylish design",
     ],
     sizeOptions: ["One size fits all"],
-    images: ["./img/mask.jpeg"],
+    images: [
+      "./img/mask.jpeg",
+      "https://placehold.co/501x501",
+      "https://placehold.co/501x501",
+    ],
   },
   7: {
     name: "Cup 1HR",
@@ -84,7 +92,11 @@ const productDetails = {
     category: "Equipment",
     features: ["Dishwasher safe", "High-quality ceramic", "Microwave friendly"],
     sizeOptions: [],
-    images: ["./img/zpcup.jpg"],
+    images: [
+      "./img/zpcup.jpg",
+      "https://placehold.co/501x501",
+      "https://placehold.co/501x501",
+    ],
   },
   8: {
     name: "Sport Pants",
@@ -93,7 +105,11 @@ const productDetails = {
     category: "Clothing",
     features: ["Stretchable fabric", "Moisture-wicking", "Stylish design"],
     sizeOptions: ["S", "M", "L", "XL"],
-    images: ["./img/Zplpent1.jpg"],
+    images: [
+      "./img/Zplpent1.jpg",
+      "https://placehold.co/501x501",
+      "https://placehold.co/501x501",
+    ],
   },
   9: {
     name: "Cups 1HR (Set)",
@@ -102,7 +118,11 @@ const productDetails = {
     category: "Equipment",
     features: ["Dishwasher safe", "Durable material", "Stylish design"],
     sizeOptions: [],
-    images: ["./img/zpcups.jpg"],
+    images: [
+      "./img/zpcups.jpg",
+      "https://placehold.co/501x501",
+      "https://placehold.co/501x501",
+    ],
   },
   10: {
     name: "Sport Jacket - Winter",

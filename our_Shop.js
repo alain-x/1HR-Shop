@@ -50,7 +50,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Sport Pents",
+    name: "Sport Pants",
     category: "Clothing",
     price: 25000,
     image: "./img/Zplpent1.jpg",
