@@ -106,7 +106,7 @@ const productDetails = {
     features: ["Stretchable fabric", "Moisture-wicking", "Stylish design"],
     sizeOptions: ["S", "M", "L", "XL"],
     images: [
-      "./img/Zplpent1.jpg",
+      "./img/zplpent1.jpg",
       "https://placehold.co/501x501",
       "https://placehold.co/501x501",
     ],
