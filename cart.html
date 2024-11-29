@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart - 1HR Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="bg-gray-100">
     <!-- Shop Navigation -->
@@ -55,17 +63,6 @@
           </li>
         </ul>
 
-        <!-- Cart Icon -->
-        <a href="cart.html" class="relative">
-          <i class="fas fa-shopping-cart text-2xl"></i>
-          <span
-            id="cart-count"
-            class="absolute -top-2 -right-2 bg-red-500 text-xs font-bold rounded-full px-2 py-0.5"
-          >
-            0
-          </span>
-        </a>
-
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-btn" class="lg:hidden text-2xl">
           <i class="fas fa-bars"></i>
@@ -105,34 +102,36 @@
     </nav>
 
     <!-- Cart Section -->
-    <section class="py-12 max-w-3xl mx-auto">
+    <section class="py-20 max-w-4xl mx-auto px-4 mt-24">
       <div class="bg-white p-6 rounded shadow">
         <h2 class="text-3xl font-bold mb-6 text-green-600">Your Cart</h2>
 
         <!-- Cart Items -->
-        <div id="cart-items" class="space-y-4 ml-[100px]"></div>
+        <div id="cart-items" class="space-y-4"></div>
 
         <!-- Cart Total and Actions -->
-        <div class="mt-8 border-t pt-4 flex justify-between items-center">
-          <h3 class="text-2xl font-bold">
+        <div class="mt-8 border-t pt-4">
+          <h3 class="text-2xl font-bold mb-4">
             Total: <span id="cart-total" class="text-green-600">RWF 0</span>
           </h3>
-          <div class="space-x-4">
+          <div
+            class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4"
+          >
             <button
               onclick="clearCart()"
-              class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700"
+              class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 w-full md:w-auto"
             >
               Clear Cart
             </button>
             <button
               onclick="proceedToCheckout()"
-              class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+              class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 w-full md:w-auto"
             >
               Proceed to Checkout
             </button>
             <button
-              onclick="window.location.href='shop.html';"
-              class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+              onclick="window.location.href='our_Shop.html';"
+              class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 w-full md:w-auto"
             >
               Continue Shopping
             </button>
@@ -141,6 +140,7 @@
       </div>
     </section>
 
+    <!-- JavaScript -->
     <script>
       // Load Cart Items
       function loadCart() {
@@ -228,6 +228,7 @@
 
       // Initialize
       document.addEventListener("DOMContentLoaded", loadCart);
+
       // Mobile Menu Toggle Functionality
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
