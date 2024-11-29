@@ -27,16 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const productContainer = document.getElementById("products-container");
- 
+
   productContainer.innerHTML = products
     .map(
       (product) => `
-              <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+              <div class="bg-white  rounded shadow hover:shadow-lg transition">
                 <a href="product-details.html?id=${product.id}" class="block">
                   <img
                     src="${product.image}"
                     alt="${product.name}"
-                    class="w-full h-48 object-cover mb-4"
+                    class="w-full h-80 object-cover rounded"
                   />
                   <h4 class="text-xl font-semibold mb-2">${product.name}</h4>
                   <p class="text-gray-600 mb-4">Price: ${product.price}</p>
@@ -45,12 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
             `
     )
     .join("");
- 
+
   updateCartCount();
 });
 
-function updateCartCount() { 
-  const cart = JSON.parse(localStorage.getItem("cart")) || []; 
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartCount = document.getElementById("cart-count");
   cartCount.textContent = cart.length > 0 ? cart.length : "0";
 }
+
+// Mobile Menu Toggle Functionality
+const menuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});

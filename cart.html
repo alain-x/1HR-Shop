@@ -7,10 +7,100 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-green-600 p-4 shadow">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="index.html" class="text-white text-2xl font-bold">1HR Shop</a>
+    <!-- Shop Navigation -->
+    <nav
+      class="navbar fixed top-0 w-full bg-green-600 text-white shadow-lg z-20"
+    >
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="text-2xl font-bold tracking-wide">
+          1HR Shop
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden lg:flex space-x-8 font-medium text-base">
+          <li>
+            <a
+              href="index.html"
+              class="hover:underline hover:text-green-300 transition"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="our_Shop.html"
+              class="hover:underline hover:text-green-300 transition"
+            >
+              Shop
+            </a>
+          </li>
+          <li>
+            <a
+              href="about_Shop.html"
+              class="hover:underline hover:text-green-300 transition"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="hover:underline hover:text-green-300 transition"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Cart Icon -->
+        <a href="cart.html" class="relative">
+          <i class="fas fa-shopping-cart text-2xl"></i>
+          <span
+            id="cart-count"
+            class="absolute -top-2 -right-2 bg-red-500 text-xs font-bold rounded-full px-2 py-0.5"
+          >
+            0
+          </span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden flex flex-col bg-green-700 text-white text-center space-y-4 py-4"
+      >
+        <a
+          href="index.html"
+          class="block hover:underline hover:text-green-300 transition"
+        >
+          Home
+        </a>
+        <a
+          href="our_Shop.html"
+          class="block hover:underline hover:text-green-300 transition"
+        >
+          Shop
+        </a>
+        <a
+          href="about_Shop.html"
+          class="block hover:underline hover:text-green-300 transition"
+        >
+          About
+        </a>
+        <a
+          href="contact.html"
+          class="block hover:underline hover:text-green-300 transition"
+        >
+          Contact
+        </a>
       </div>
     </nav>
 
@@ -20,7 +110,7 @@
         <h2 class="text-3xl font-bold mb-6 text-green-600">Your Cart</h2>
 
         <!-- Cart Items -->
-        <div id="cart-items" class="space-y-4"></div>
+        <div id="cart-items" class="space-y-4 ml-[100px]"></div>
 
         <!-- Cart Total and Actions -->
         <div class="mt-8 border-t pt-4 flex justify-between items-center">
@@ -138,6 +228,13 @@
 
       // Initialize
       document.addEventListener("DOMContentLoaded", loadCart);
+      // Mobile Menu Toggle Functionality
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     </script>
   </body>
 </html>

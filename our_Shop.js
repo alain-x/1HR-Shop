@@ -118,3 +118,10 @@ window.onload = () => {
   updateCartCount();
   renderProducts(products); // Render all products initially
 };
+// Mobile Menu Toggle Functionality
+const menuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
