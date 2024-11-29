@@ -107,7 +107,8 @@ const productDetails = {
     sizeOptions: ["S", "M", "L", "XL"],
     images: [
       "./img/zplpent1.jpg",
-      "./img/zplpent2.jpg", 
+      "./img/zplpent2.jpg",
+      "https://placehold.co/501x501",
     ],
   },
   9: {
