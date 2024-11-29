@@ -32,7 +32,7 @@ const products = [
     name: "1HR Hats",
     category: "Clothing",
     price: 2000,
-    image: "./img/hat.jpeg",
+    image: "./img/zphats.jpg",
   },
   {
     id: 6,
@@ -46,14 +46,28 @@ const products = [
     name: "Cup 1HR",
     category: "Clothing",
     price: 2000,
-    image: "./img/cup.jpeg",
+    image: "./img/zpcup.jpg",
   },
   {
     id: 8,
+    name: "Sport Pents",
+    category: "Clothing",
+    price: 25000,
+    image: "./img/Zplpent1.jpg",
+  },
+  {
+    id: 9,
     name: "Cups 1HR",
     category: "Equipment",
     price: 2000,
-    image: "./img/cups.jpeg",
+    image: "./img/zpcups.jpg",
+  },
+  {
+    id: 10,
+    name: "Sport Jacket",
+    category: "Clothing",
+    price: 2000,
+    image: "./img/jacket1.jpeg",
   },
 ];
 
@@ -63,11 +77,11 @@ function renderProducts(filteredProducts) {
   productsContainer.innerHTML = ""; // Clear the container
   filteredProducts.forEach((product) => {
     const productHTML = `
-          <div class="bg-white  rounded shadow hover:shadow-lg transition">
+          <div class="bg-white   rounded shadow hover:shadow-lg transition">
             <a href="product-details.html?id=${product.id}">
               <img src="${product.image}" alt="${
       product.name
-    }" class="w-full h-60 object-cover rounded">
+    }" class="w-full h-80 object-cover rounded">
               <h3 class="mt-4 text-xl font-bold">${product.name}</h3>
               <p class="mt-2 text-gray-600">RWF ${product.price.toLocaleString()}</p>
             </a>
