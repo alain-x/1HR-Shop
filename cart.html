@@ -13,6 +13,8 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Include PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeZBeO50BgYNw7e_mJ1QtcVjF24FNdQdoSQSOpGgrd9EZuPdgM6t2agYyR0DsA6aREmAkH3nxm0LvgJu&currency=USD"></script>
   </head>
   <body class="bg-gray-100">
     <!-- Shop Navigation -->
@@ -22,54 +24,43 @@
       <div
         class="container mx-auto flex justify-between items-center py-4 px-6"
       >
-        <!-- Logo -->
-        <a href="index.html" class="text-2xl font-bold tracking-wide">
-          1HR Shop
-        </a>
-
-        <!-- Desktop Navigation -->
+        <a href="index.html" class="text-2xl font-bold tracking-wide"
+          >1HR Shop</a
+        >
         <ul class="hidden lg:flex space-x-8 font-medium text-base">
           <li>
             <a
               href="index.html"
               class="hover:underline hover:text-green-300 transition"
+              >Home</a
             >
-              Home
-            </a>
           </li>
           <li>
             <a
               href="our_Shop.html"
               class="hover:underline hover:text-green-300 transition"
+              >Shop</a
             >
-              Shop
-            </a>
           </li>
           <li>
             <a
               href="about_Shop.html"
               class="hover:underline hover:text-green-300 transition"
+              >About</a
             >
-              About
-            </a>
           </li>
           <li>
             <a
               href="contact.html"
               class="hover:underline hover:text-green-300 transition"
+              >Contact</a
             >
-              Contact
-            </a>
           </li>
         </ul>
-
-        <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-btn" class="lg:hidden text-2xl">
           <i class="fas fa-bars"></i>
         </button>
       </div>
-
-      <!-- Mobile Navigation -->
       <div
         id="mobile-menu"
         class="hidden lg:hidden flex flex-col bg-green-700 text-white text-center space-y-4 py-4"
@@ -77,27 +68,23 @@
         <a
           href="index.html"
           class="block hover:underline hover:text-green-300 transition"
+          >Home</a
         >
-          Home
-        </a>
         <a
           href="our_Shop.html"
           class="block hover:underline hover:text-green-300 transition"
+          >Shop</a
         >
-          Shop
-        </a>
         <a
           href="about_Shop.html"
           class="block hover:underline hover:text-green-300 transition"
+          >About</a
         >
-          About
-        </a>
         <a
           href="contact.html"
           class="block hover:underline hover:text-green-300 transition"
+          >Contact</a
         >
-          Contact
-        </a>
       </div>
     </nav>
 
@@ -105,36 +92,34 @@
     <section class="py-20 max-w-4xl mx-auto px-4 mt-24">
       <div class="bg-white p-6 rounded shadow">
         <h2 class="text-3xl font-bold mb-6 text-green-600">Your Cart</h2>
-
         <!-- Cart Items -->
         <div id="cart-items" class="space-y-4"></div>
-
         <!-- Cart Total and Actions -->
         <div class="mt-8 border-t pt-4">
           <h3 class="text-2xl font-bold mb-4">
             Total: <span id="cart-total" class="text-green-600">RWF 0</span>
           </h3>
-          <div
-            class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4"
-          >
-            <button
-              onclick="clearCart()"
-              class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 w-full md:w-auto"
-            >
-              Clear Cart
-            </button>
-            <button
-              onclick="proceedToCheckout()"
-              class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 w-full md:w-auto"
-            >
-              Proceed to Checkout
-            </button>
-            <button
-              onclick="window.location.href='our_Shop.html';"
-              class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 w-full md:w-auto"
-            >
-              Continue Shopping
-            </button>
+          <div class="flex flex-wrap items-center justify-between">
+            <!-- Left Buttons -->
+            <div class="flex space-x-4">
+              <button
+                onclick="clearCart()"
+                class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700"
+              >
+                Clear Cart
+              </button>
+              <button
+                onclick="window.location.href='our_Shop.html';"
+                class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600"
+              >
+                Continue Shopping
+              </button>
+            </div>
+            <!-- Payment Options -->
+            <div class="mt-4 md:mt-0 space-y-4">
+              <!-- PayPal Button -->
+              <div id="paypal-button-container"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -147,13 +132,11 @@
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const cartItemsContainer = document.getElementById("cart-items");
         const cartTotalElement = document.getElementById("cart-total");
-
         cartItemsContainer.innerHTML = "";
         let total = 0;
 
         if (cart.length === 0) {
-          cartItemsContainer.innerHTML = `
-          <p class="text-center text-gray-500">Your cart is empty.</p>`;
+          cartItemsContainer.innerHTML = `<p class="text-center text-gray-500">Your cart is empty.</p>`;
           cartTotalElement.textContent = "RWF 0";
           return;
         }
@@ -166,28 +149,29 @@
           itemDiv.className =
             "flex items-center justify-between border p-4 rounded shadow-sm";
           itemDiv.innerHTML = `
-          <div class="flex items-center">
-            <img src="${item.image}" alt="${
+            <div class="flex items-center">
+              <img src="${item.image}" alt="${
             item.name
           }" class="w-16 h-16 rounded mr-4">
-            <div>
-              <h4 class="text-lg font-bold">${item.name}</h4>
-              <p class="text-gray-600">Price: RWF ${item.price.toLocaleString()}</p>
-              <div class="flex items-center mt-2">
-                <button onclick="changeQuantity(${index}, -1)" class="bg-gray-300 text-black px-2 py-1 rounded hover:bg-gray-400">-</button>
-                <span class="mx-3">${item.quantity}</span>
-                <button onclick="changeQuantity(${index}, 1)" class="bg-gray-300 text-black px-2 py-1 rounded hover:bg-gray-400">+</button>
+              <div>
+                <h4 class="text-lg font-bold">${item.name}</h4>
+                <p class="text-gray-600">Price: RWF ${item.price.toLocaleString()}</p>
+                <div class="flex items-center mt-2">
+                  <button onclick="changeQuantity(${index}, -1)" class="bg-gray-300 text-black px-2 py-1 rounded hover:bg-gray-400">-</button>
+                  <span class="mx-3">${item.quantity}</span>
+                  <button onclick="changeQuantity(${index}, 1)" class="bg-gray-300 text-black px-2 py-1 rounded hover:bg-gray-400">+</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="text-right">
-            <p class="text-gray-600">Total: RWF ${itemTotalPrice.toLocaleString()}</p>
-            <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button>
-          </div>`;
+            <div class="text-right">
+              <p class="text-gray-600">Total: RWF ${itemTotalPrice.toLocaleString()}</p>
+              <button onclick="removeFromCart(${index})" class="text-red-500 hover:underline">Remove</button>
+            </div>`;
           cartItemsContainer.appendChild(itemDiv);
         });
 
         cartTotalElement.textContent = `RWF ${total.toLocaleString()}`;
+        renderPayPalButton(total);
       }
 
       // Update Quantity
@@ -215,15 +199,36 @@
         loadCart();
       }
 
-      // Proceed to Checkout
-      function proceedToCheckout() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        if (cart.length === 0) {
-          alert("Your cart is empty. Add items to proceed to checkout.");
-          return;
-        }
-        alert("Proceeding to checkout...");
-        window.location.href = "checkout.html";
+      // Render PayPal Button
+      function renderPayPalButton(total) {
+        paypal
+          .Buttons({
+            createOrder: function (data, actions) {
+              return actions.order.create({
+                purchase_units: [
+                  {
+                    amount: {
+                      value: (total / 1000).toFixed(2),
+                      currency_code: "USD",
+                    },
+                  },
+                ],
+              });
+            },
+            onApprove: function (data, actions) {
+              return actions.order.capture().then(function (details) {
+                alert(
+                  "Payment successful! Transaction completed by " +
+                    details.payer.name.given_name
+                );
+                clearCart();
+              });
+            },
+            onError: function (err) {
+              alert("Payment error. Please try again.");
+            },
+          })
+          .render("#paypal-button-container");
       }
 
       // Initialize
